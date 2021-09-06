@@ -1,0 +1,13 @@
+@font-face {
+  font-family: "roboto";
+  font-weight: normal;
+  src: url(https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap) format("truetype");
+}
+
+
+
+@font-face {
+  font-family: "noto sans";
+  font-weight: 500;
+  src: url(https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500&display=swap) format("truetype");
+}

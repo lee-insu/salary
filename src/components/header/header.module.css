@@ -1,0 +1,133 @@
+.nav {
+    position: relative;
+    width: 100%;
+    height: 55px;
+    border-bottom: 1px solid #F4F4F4;;
+    display: flex;
+}
+
+
+.logo {
+    position: relative;
+    width: 76px;
+    height: 33px;
+    left: 103px;
+    display: inline-block;
+
+    font-family: roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 28px;
+    line-height: 44px;
+    text-align: center;
+    color: #3065EC;
+}
+
+.ul {
+    display: flex;
+}
+
+.list {
+position: absolute;
+width: 48px;
+height: 24px;
+left: 264px;
+top: 14.95px;
+
+font-family: noto sans;
+font-weight: 500;
+font-size: 16px;
+line-height: 24px;
+
+display: flex;
+align-items: center;
+text-align: center;
+
+color: #000000;
+}
+
+.icon {
+    position: absolute;
+    width: 32px;
+    height: 27px;
+    left: 323px;
+    top: 13px;
+    border-radius: 5px;
+}
+
+.list2 {
+    position: absolute;
+    width: 59px;
+    height: 24px;
+    left: 378px;
+    top: 14.95px;
+
+    font-family: noto sans;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+    color: #000000;
+}
+
+.icon2 {
+    position: absolute;
+    width: 32px;
+    height: 27px;
+    left: 448px;
+    top: 13px;
+    border-radius: 5px;
+}
+
+.input {
+    position: absolute;
+    width: 284px;
+    height: 32px;
+    left: 578px;
+    top: 11px;
+
+    background: #FFFFFF;
+    border: 1px solid #E4E4E4;
+    box-sizing: border-box;
+    padding-left: 1rem;
+    border-radius: 37px;
+}
+
+.input::-webkit-input-placeholder{
+    background-image: url(https://cdn1.iconfinder.com/data/icons/hawcons/32/698627-icon-111-search-256.png) ;
+    background-size: contain;
+    background-position:  1px center;
+    background-repeat: no-repeat;
+    padding-top: 0.1rem;
+    padding-left: 1.3rem;
+    text-align: left;
+    letter-spacing: 0.5px;
+    text-indent: 0;
+}
+
+.login {
+    position: absolute;
+    width: 45px;
+    height: 24px;
+    left: 1295px;
+    top: 15px;
+
+    font-family: noto sans;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+
+
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+    color: #000000;
+}
+
