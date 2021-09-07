@@ -6,11 +6,31 @@ a:hover{text-decoration: none; cursor: pointer;}
 ul {margin: 0; padding: 0;}
 li{list-style: none;}
 button:hover{cursor: pointer;}
+input {
+    appearance: none; 
+    -moz-appearance: none; 
+    -webkit-appearance: none; 
+    border-radius: 0;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+}
 
 
 .app {
-    width: 1440px;
+    width: 100%;
     text-align: center;
     margin: 0 auto;
 }
 
+.session {
+    width: 1440px;
+    text-align: center;
+    margin: 0 auto;
+
+}
+
+.ul {
+    background-color: aquamarine;
+    width: 100%;
+    display: flex;
+}

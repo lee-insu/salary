@@ -20,8 +20,6 @@ const Banner = () => {
                     </ul>
                     <button className={style.btn}>당장 보러가기 &ensp;<FontAwesomeIcon icon={faChevronRight} /></button>
                 </div>
-                
-                
                 </div>
                 <div className={style.img_box}>img box</div>
            </div>
