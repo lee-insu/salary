@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import style from './app_content.module.css';
 
 const AppContent = () => {
@@ -18,6 +19,7 @@ const AppContent = () => {
                      </ul>
                  </nav>
             </div>
+            <Link to='/onboard'>
             <div className={style.container}>
                 <div className={style.content_box}>
                     <div className={style.name_box}>
@@ -33,22 +35,7 @@ const AppContent = () => {
                     </ul>
                 </div>
             </div>
-            {/* 경계선 */}
-            <div className={style.container}>
-                <div className={style.content_box}>
-                    <div className={style.name_box}>
-                        <div className={style.title}>쿠팡 (coupang)</div>
-                        <div className={style.update}>update ver</div>
-                    </div>
-                    <ul className={style.img_box}>
-                        <li className={style.img}>223px 482px</li>
-                        <li className={style.img}>223px 482px</li>
-                        <li className={style.img}>223px 482px</li>
-                        <li className={style.img}>223px 482px</li>
-                        <li className={style.img}>223px 482px</li>
-                    </ul>
-                </div>
-            </div>
+            </Link>
 
             <div className={style.more}>더보기</div>
         </div>
