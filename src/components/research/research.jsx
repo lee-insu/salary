@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import style from './research.module.css';
 
 const Research = () => {
@@ -24,6 +25,7 @@ const Research = () => {
                     </ul>
                 </div>
                 <ul className={style.article_box}>
+                    <Link to ='/research/content'>
                     <li className={style.article}>
                        <div className={style.img}>img</div>
                        <div className={style.title}>쿠팡은 어떻게 쿠팡이츠 유입을 가능하게 했을까?</div>
@@ -32,6 +34,7 @@ const Research = () => {
                             <div className={style.update}>최신 업데이트일:2021.xx.xx</div>
                        </div>
                     </li>
+                    </Link>
 
                     <li className={style.article}>
                        <div className={style.img}>img</div>
