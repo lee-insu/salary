@@ -122,3 +122,6 @@
     padding: 1rem 0rem;
 }
 
+.img:hover {
+    background-color: red;
+}
