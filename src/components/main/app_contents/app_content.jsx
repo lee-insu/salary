@@ -38,6 +38,22 @@ const AppContent = () => {
             
             </Link>
 
+            <div className={style.container}>
+                <div className={style.content_box}>
+                    <div className={style.name_box}>
+                        <div className={style.title}>쿠팡 (coupang)</div>
+                        <div className={style.update}>update ver</div>
+                    </div>
+                    <ul className={style.img_box}>
+                        <li className={style.img}>223px 482px</li>
+                        <li className={style.img}>223px 482px</li>
+                        <li className={style.img}>223px 482px</li>
+                        <li className={style.img}>223px 482px</li>
+                        <li className={style.img}>223px 482px</li>
+                    </ul>
+                </div>
+            </div>
+
             <div className={style.more}>더보기</div>
         </div>
     );

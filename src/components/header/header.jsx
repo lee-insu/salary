@@ -16,7 +16,6 @@ const Header = () => {
                 </li>
                 <li className={style.li}>
                     <div className={style.list2}>집중탐구</div>
-                    <FontAwesomeIcon icon={faAngleDown} className={style.icon2} />
                 </li>
             </ul>
             <form>
@@ -29,7 +28,7 @@ const Header = () => {
             </form>
             <ul>
                 <li className={style.li}>
-                    <div className={style.login}>로그인</div>
+                    <Link to='/login'><div className={style.login}>로그인</div></Link>
                 </li>
             </ul>
         </nav>

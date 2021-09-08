@@ -13,6 +13,7 @@
     height: 33px;
     left: 103px;
     display: inline-block;
+    padding-top: 2px;
 
     font-family: roboto;
     font-style: normal;
@@ -50,8 +51,8 @@ color: #000000;
     position: absolute;
     width: 32px;
     height: 27px;
-    left: 323px;
-    top: 13px;
+    left: 325px;
+    top: 15px;
     border-radius: 5px;
 }
 

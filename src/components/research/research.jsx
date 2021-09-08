@@ -31,7 +31,7 @@ const Research = () => {
                        <div className={style.title}>쿠팡은 어떻게 쿠팡이츠 유입을 가능하게 했을까?</div>
                        <div className={style.article_info}>
                             <div className={style.view}><img className={style.icon_view} src="/static/img/view.png" alt="view"/>12345</div>
-                            <div className={style.update}>최신 업데이트일:2021.xx.xx</div>
+                            <div className={style.update}>최신 업데이트일 : 2021.xx.xx</div>
                        </div>
                     </li>
                     </Link>

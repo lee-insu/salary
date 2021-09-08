@@ -44,6 +44,7 @@
 
 .user_info {
     display: flex;
+    margin-top: 5px;
 }
 
 .keyword_ul {
@@ -70,10 +71,11 @@
     line-height: 15px;
     color: #fff;
     margin-right: 20px;
+    margin-top: 2px;
 }
 
 .icon_view {
-    width: 15px;
+    height: 10px;
     margin-right: 4px;
 }
 

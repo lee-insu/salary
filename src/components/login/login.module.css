@@ -1,0 +1,148 @@
+.session {
+    width: 100%;
+    margin: 0 auto;
+    height: 77vh;
+}
+
+.main_box {
+    margin-top: 70px;
+}
+
+.category {
+    font-family: noto sans;
+    font-weight: 900;
+    font-size: 18px;
+    color: #3065EC;
+}
+
+.main_title {
+    font-family: noto sans;
+    font-weight: 700;
+    font-size: 35px;
+    margin-top: 35px;
+    color: #323232;
+}
+
+.sub_title {
+    font-family: noto sans;
+    font-weight: 400;
+    font-size: 14px;
+    color: #323232;
+    margin-top: 12px;
+
+}
+
+.signin_container {
+    width: 604px;
+    margin: 0 auto;
+    margin-top: 45px;
+}
+
+.find_user {
+     margin-bottom: 17px;
+     border: 0px solid;
+     background-color: #fff;
+     display: flex;
+     margin-left: auto;
+     font-family: noto sans;
+     font-weight: 500;
+     font-size: 14px;
+     color: rgba(0, 0, 0, 0.6);
+}
+
+.icon {
+    color: rgba(0, 0, 0, 0.6);
+    padding-top: 4px;
+    padding-left: 17px;
+}
+
+.signin {
+    width: 100%;
+    margin: 0 auto;
+    padding-top: 40px;
+    border-top: 1px solid #C8C8C8;
+}
+
+.id_container {
+    display: flex;
+    margin: 0 auto;
+    justify-content: space-between;
+
+}
+
+.id_text {
+    font-family: noto sans;
+    font-weight: 400;
+    font-size: 18px;
+    color: #000000;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+.id_input {
+    width: 392px;
+    height: 60px;
+    background: #FFFFFF;
+    border: 1px solid #E1E1E1;
+    box-sizing: border-box;
+    border-radius: 4px;
+}
+
+.pw_container {
+    padding-top: 10px;
+    display: flex;
+    margin: 0 auto;
+    justify-content: space-between;
+}
+
+.pw_text {
+    font-family: noto sans;
+    font-weight: 400;
+    font-size: 18px;
+    color: #000000;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.pw_input {
+    width: 392px;
+    height: 60px;
+    background: #FFFFFF;
+    border: 1px solid #E1E1E1;
+    box-sizing: border-box;
+    border-radius: 4px;
+}
+
+.submit_btn {
+    margin-top: 75px;
+    display: flex;
+}
+
+.signup_btn {
+    padding: 15px 40px;
+    border: 0px solid;
+    margin-left: auto;
+    margin-right: 20px;
+    font-family: noto sans;
+    font-weight: 500;
+    font-size: 18px;
+    color: rgba(0, 0, 0, 0.6);
+    cursor: pointer;
+}
+
+.submit {
+    background: #3065EC;
+    border-radius: 100px;
+    border: 0px solid;
+    font-family: noto sans;
+    font-weight: 500;
+    font-size: 18px;
+    padding: 15px 97px;
+    color: #FFFFFF;
+    cursor: pointer;
+}
