@@ -7,24 +7,24 @@
 @font-face {
   font-family: "noto sans";
   font-weight:400;
-  src: url(https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400&display=swap) format("truetype");
+  src: url(./common/fonts/NotoSansCJKkr-Regular.otf) format("truetype");
 }
 
 @font-face {
   font-family: "noto sans";
   font-weight:500;
-  src: url(https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500&display=swap) format("truetype");
+  src: url(./common/fonts/NotoSansCJKkr-Medium.otf) format("truetype");
 }
 
 @font-face {
   font-family: "noto sans";
   font-weight:700;
-  src: url(https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@700&display=swap) format("truetype");
+  src: url(./common/fonts/NotoSansCJKkr-Bold.otf) format("truetype");
 }
 
 
 @font-face {
   font-family: "noto sans";
   font-weight:900;
-  src: url(https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@900&display=swap) format("truetype");
+  src: url(./common/fonts/NotoSansCJKkr-Black.otf) format("truetype");
 }
