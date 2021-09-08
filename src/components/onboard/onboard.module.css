@@ -66,8 +66,9 @@
 .img_box {
     width: 100%;
     display: flex;
-    justify-content: center;
-    margin-bottom: 46px;
+    justify-content: space-between;
+    margin-bottom: 50px;
+    overflow-x: auto;
 }
 
 .img_box > li {
@@ -77,7 +78,7 @@
 .img {
     width: 223px;
     height: 482px;
-    margin: 12px;
+    margin: 20px 0px;
     border-radius: 16px;
     border: 0px solid;
     background-color: #e4e4e4;

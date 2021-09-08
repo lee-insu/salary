@@ -35,6 +35,7 @@ const AppContent = () => {
                     </ul>
                 </div>
             </div>
+            
             </Link>
 
             <div className={style.more}>더보기</div>

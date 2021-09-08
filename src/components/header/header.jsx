@@ -2,12 +2,13 @@ import React from 'react';
 import style from './header.module.css';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleDown } from '@fortawesome/free-solid-svg-icons'
+import { Link } from 'react-router-dom';
 
 
 const Header = () => {
     return (
         <nav className={style.nav}>
-            <div className={style.logo}>salary</div>
+            <Link to='/'><div className={style.logo}>salary</div></Link>  
             <ul className={style.ul}>
                 <li className={style.li}>
                     <div className={style.list}>앱 화면</div>

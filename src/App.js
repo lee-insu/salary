@@ -4,6 +4,7 @@ import Footer from './components/footer/footer';
 import Header from './components/header/header';
 import Main from './components/main/main';
 import Onboard from './components/onboard/onboard';
+import Research from './components/research/research';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
           <Switch>
             <Route exact path ='/' component={Main}/>
             <Route exact path ='/onboard' component={Onboard}/>
+            <Route  exact path='/research' component={Research}/> 
           </Switch>
           </div>
           <Footer/>

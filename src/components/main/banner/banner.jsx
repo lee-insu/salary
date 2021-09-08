@@ -2,6 +2,7 @@ import React from 'react';
 import style from './banner.module.css';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronRight } from '@fortawesome/free-solid-svg-icons'
+import { Link } from 'react-router-dom';
 
 const Banner = () => {
     return (
@@ -16,9 +17,8 @@ const Banner = () => {
                 <div className={style.container_user}>
                     <ul className={style.ul}>
                          <li className={style.view}><img className={style.icon_view} src="/static/img/view.png" alt="view"/>12345</li>
-                        <li className={style.comment}><img className={style.icon_comment} src="/static/img/comment.png" alt="comment"/>123개</li>
                     </ul>
-                    <button className={style.btn}>당장 보러가기 &ensp;<FontAwesomeIcon icon={faChevronRight} /></button>
+                    <Link to='/research'><button className={style.btn}>당장 보러가기 &ensp;<FontAwesomeIcon icon={faChevronRight} /></button></Link>
                 </div>
                 </div>
                 <div className={style.img_box}>img box</div>
