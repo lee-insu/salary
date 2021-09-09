@@ -92,12 +92,13 @@
 .article_box {
     margin-top: 50px;
     display: flex;
-    justify-content: space-between;
     flex-wrap: wrap;
+    justify-content: flex-start;
 }
 
 .article {
     margin-bottom: 66px;
+    padding-right: 28px;
 }
 
 .img {
@@ -146,6 +147,3 @@
     color: rgba(50, 50, 50, 0.6);
 }
 
-.img:hover {
-    background-color: red;
-}

@@ -23,6 +23,8 @@ const Onboard = () => {
                         <li className={style.img}>223px 482px</li>
                         <li className={style.img}>223px 482px</li>
                         <li className={style.img}>223px 482px</li>
+                        <li className={style.img}>223px 482px</li>
+                        
                     </ul>
                 </div>
             </div>
