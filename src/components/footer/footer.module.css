@@ -10,6 +10,7 @@
     width: 1440px;
     display: flex;
     margin: 0 auto;
+    z-index: 20;
 }
 
 .ul {
@@ -35,4 +36,106 @@
     font-size: 14px;
     color: rgba(0, 0, 0, 0.4);
 
+}
+
+.created {
+    position: relative;
+    display: block;
+
+}
+
+.created .tooltip {
+    visibility: hidden;       
+    position: absolute;
+    width: 180px;
+    height: 121px;
+    top:-150px;
+    background: #FFFFFF;
+    border: 1px solid #E1E1E1;
+    box-sizing: border-box;
+    border-radius: 6px;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.08);
+    z-index: 1;
+    text-align: left;
+}
+
+.tooltip > :nth-child(1) {
+    margin-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 16px;
+    border-bottom: 1px solid #E1E1E1;
+    font-family: noto sans;
+    font-weight: 500;
+    font-size: 12px;
+    color: rgba(0, 0, 0, 0.6);
+}
+
+.tooltip > :nth-child(2) {
+    margin-top: 13px;
+    margin-left: 16px;
+
+    font-family: noto sans;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 9px;
+    letter-spacing: 0.9px;
+    color: rgba(0, 0, 0, 0.6);
+}
+
+.tooltip > :nth-child(3) {
+    margin-top: 10px;
+    margin-left: 16px;
+
+    font-family: noto sans;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 9px;
+    letter-spacing: 0.9px;
+    color: rgba(0, 0, 0, 0.6);
+}
+
+.created:hover .tooltip {
+    visibility: visible;
+}
+
+.created .tooltip::before {
+    content: '';
+	position: absolute;
+	border-style: solid;
+    border-width: 10px;
+    top:101%;
+    left: 15%;
+    border-color:  #E1E1E1 transparent transparent transparent;
+	display: block;
+	width: 0;
+    z-index: 1;
+}
+
+.created .tooltip::after {
+    content: '';
+	position: absolute;
+	border-style: solid;
+    border-width: 10px;
+    top:100%;
+    left: 15%;
+    border-color:  #fff transparent transparent transparent;
+	display: block;
+	width: 0;
+    z-index: 1;
+    -webkit-filter: drop-shadow(0px 0px 2px  rgba(0, 0, 0, 0.08));
+    filter        : drop-shadow(0px 0px 2px  rgba(0, 0, 0, 0.08));
+}
+
+.icon {
+    width: 14px;
+    height: 14px;
+    margin-right: 4px;
+}
+
+.arrow {
+    height: 9px;
+    padding-right: 20px;
+    padding-top: 5px;
+    color: rgba(0, 0, 0, 0.6);
+    float: right;
 }

@@ -1,7 +1,7 @@
 import React from 'react';
 import style from './onboard.module.css';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faChevronRight } from '@fortawesome/free-solid-svg-icons'
+import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
 
 const Onboard = () => {
     return (
