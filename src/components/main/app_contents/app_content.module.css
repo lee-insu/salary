@@ -36,7 +36,7 @@
 }
 
 .li_active {
-    border: 0px solid;
+    border: 1px solid #3065EC;
     background-color: #3065EC;
     border-radius: 37px;
     padding: 8px 17px;

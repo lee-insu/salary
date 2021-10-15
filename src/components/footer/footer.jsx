@@ -3,6 +3,7 @@ import style from './footer.module.css';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
 
+
 const Footer = () => {
     return (
         <nav className={style.session}>
@@ -18,7 +19,7 @@ const Footer = () => {
                 <li>헤이앱은 국내 모바일 앱 화면과 관련 컨텐츠를 제공합니다</li>
                 <li>헤이앱 즐겨찾기</li>  
             </ul>
-                <div className={style.logo}>salary</div>
+            <div className={style.logo}>salary</div>
            </nav>
         </nav>
     );
