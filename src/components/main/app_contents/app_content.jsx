@@ -2,8 +2,11 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import style from './app_content.module.css';
 import {firestore} from '../../../service/firebase';
+import { connect } from 'react-redux';
+import {getKeyword} from '../../../service/store';
 
-const AppContent = () => {
+
+const AppContent = ({getKeyword}) => {
 
     const fireStore = firestore.collection('appKeyword');
 
@@ -14,7 +17,8 @@ const AppContent = () => {
     const [allImgs,getAllImgs] = useState([]);
     const [allContentsArr,getAllContentsArr] =useState([]);
     const [allImgsArr,getAllImgsArr] = useState([]);
-
+  
+    
 
     const handleKeyword = e => {
         setActiveBtn(e)
@@ -28,7 +32,6 @@ const AppContent = () => {
         })
     };
     
-
   
     useEffect(()=> {
         fireStore.where('active','==',true).onSnapshot(snapshot => {
@@ -38,6 +41,7 @@ const AppContent = () => {
             for(let i = 0; i < array.length; i++) {
                 const arr = array[i].id;
                 getAppKeywords(prevState => [...prevState,arr]);
+                getKeyword(arr);
             }
         })
     },[])
@@ -69,7 +73,7 @@ const AppContent = () => {
         if(!activeBtn && allContentsArr){
             try{
             allContentsArr.map(content => {
-                const id = content.id;
+                const id = content.id; 
                 appKeywords.forEach(keyword => {
                     firestore.collection('imgs').doc(keyword).collection('img')
                     .doc(id).collection('list').where('order','==','1')
@@ -106,7 +110,6 @@ const AppContent = () => {
        })
     }
    
-
     const allContent = allContentsArr.map(content => 
         <Link to = {`/onboard/${content.id}`}>
             <div 
@@ -149,7 +152,7 @@ const AppContent = () => {
                 )
               content = cont
         }
-
+       
 
 
 
@@ -191,4 +194,12 @@ const AppContent = () => {
     );
 };
 
-export default AppContent;
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        getKeyword:(key) => dispatch(getKeyword(key))
+    }
+};
+
+
+export default connect(null,mapDispatchToProps)(AppContent);

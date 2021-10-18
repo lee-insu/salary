@@ -15,7 +15,7 @@ const Header = () => {
                     <FontAwesomeIcon icon={faAngleDown} className={style.icon} />
                 </li>
                 <li className={style.li}>
-                    <div className={style.list2}>집중탐구</div>
+                    <Link to='/research'><div className={style.list2}>집중탐구</div></Link>
                 </li>
             </ul>
             <form>

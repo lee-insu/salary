@@ -20,7 +20,7 @@ function App() {
             <Route exact path ='/' component={Main}/>
             <Route exact path ='/onboard/:id' component={Onboard}/>
             <Route exact path ='/research' component={Research}/> 
-            <Route exact path ='/research/content' component={ResearchContent}/>
+            <Route exact path ='/research/:id' component={ResearchContent}/>
             <Route exact path = '/login' component={Login}/>
             <Route exact path = '/search' component={Search}/>
           </Switch>
