@@ -18,7 +18,7 @@ function App() {
         <Header/>
           <Switch>
             <Route exact path ='/' component={Main}/>
-            <Route exact path ='/onboard' component={Onboard}/>
+            <Route exact path ='/onboard/:id' component={Onboard}/>
             <Route exact path ='/research' component={Research}/> 
             <Route exact path ='/research/content' component={ResearchContent}/>
             <Route exact path = '/login' component={Login}/>

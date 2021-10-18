@@ -9,10 +9,9 @@ const AppContent = () => {
 
     const [activeBtn,setActiveBtn] = useState("");
     const [appKeywords,getAppKeywords] = useState([]);
-    const [contents,getContents] = useState(null);
+    const [contents,getContents] = useState([]);
     const [allContents,getAllContents] = useState([]);
     const [allImgs,getAllImgs] = useState([]);
-    const [imgs,getImgs] =useState();
     const [allContentsArr,getAllContentsArr] =useState([]);
     const [allImgsArr,getAllImgsArr] = useState([]);
 
@@ -28,6 +27,7 @@ const AppContent = () => {
             getContents(array);
         })
     };
+    
 
   
     useEffect(()=> {
@@ -95,7 +95,6 @@ const AppContent = () => {
         getAllImgsArr(allimgs);
     },[allImgs])
 
-
     const imgsView = id => {
        return allImgsArr.map(img=> {
           if(id === `${img.app_name}${img.app_ver}`) {
@@ -107,11 +106,9 @@ const AppContent = () => {
        })
     }
    
-  
-   
 
     const allContent = allContentsArr.map(content => 
-        <Link to = '/onboard'>
+        <Link to = {`/onboard/${content.id}`}>
             <div 
             key={content.id}
             className={style.container}>
@@ -122,13 +119,6 @@ const AppContent = () => {
                     </div>
                     <ul className={style.img_box}>
                         {imgsView(content.id)}
-                        {/* imgsview에 넘겨 content.id와 imgs의 앱네임 버전을 비교하고 그에 맞는 이미지리스트를 출력 */}
-                        {/* <li className={style.img}>223px 482px</li>
-                        <li className={style.img}>223px 482px</li>
-                        <li className={style.img}>223px 482px</li>
-                        <li className={style.img}>223px 482px</li>
-                        <li className={style.img}>223px 482px</li> */}
-                        
                         
                     </ul>
                 </div>
@@ -136,6 +126,31 @@ const AppContent = () => {
             </div>
         </Link>
         )
+
+
+        let content;
+        if(contents) {
+            const cont = contents.map(content =>
+                <Link to = {`/onboard/${content.id}`}>
+                     <div 
+                      key={content.id}
+                      className={style.container}>
+                         <div className={style.content_box}>
+                               <div className={style.name_box}>
+                                   <div className={style.title}>{content.app_name}</div>
+                                   <div className={style.update}>업데이트 버전: {content.app_ver}v</div>
+                               </div>
+                           <ul className={style.img_box}>
+                                 {imgsView(content.id)}
+                           </ul>
+                     </div>
+                    </div>
+                </Link>    
+                )
+              content = cont
+        }
+
+
 
 
     const keyword = appKeywords.map(keyword => 
@@ -169,27 +184,8 @@ const AppContent = () => {
 
 
 
-            {allContent}
-            {/* <Link to='/onboard'>
-            <div className={style.container}>
-                <div className={style.content_box}>
-                    <div className={style.name_box}>
-                        <div className={style.title}>쿠팡 (coupang)</div>
-                        <div className={style.update}>update ver</div>
-                    </div>
-                    <ul className={style.img_box}>
-                        <li className={style.img}>223px 482px</li>
-                        <li className={style.img}>223px 482px</li>
-                        <li className={style.img}>223px 482px</li>
-                        <li className={style.img}>223px 482px</li>
-                        <li className={style.img}>223px 482px</li>
-                    </ul>
-                </div>
-            </div>
-            
-            </Link> */}
-
-
+            {!activeBtn ? allContent : content}
+  
             <div className={style.more}>더보기</div>
         </div>
     );
