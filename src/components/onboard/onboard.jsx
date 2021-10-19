@@ -18,6 +18,7 @@ const Onboard = ({keyword}) => {
         if(keyword) {
             keyword.map(async(key) => {
                 const keyword = await Object.values(key).[0];
+                console.log(keyword);
                 fireStore.doc(keyword).collection('appContents').doc(params.id)
                 .get().then(result => {
                     const data = result.data();
@@ -39,7 +40,7 @@ const Onboard = ({keyword}) => {
 
     const imgView = e => {
       return e.map(img => 
-            <li className={style.img}>
+            <li key={img.id} className={style.img}>
                 <img className={style.img} src={img} alt={img.name}/>
             </li>
             )
@@ -48,7 +49,7 @@ const Onboard = ({keyword}) => {
     let img;
     if(imgs) {
        const imgsView = imgs.map(img =>  
-            <div className={style.container}>  
+            <div key={img.id} className={style.container}>  
                 <div className={style.content_box}>
                     <div className={style.name_box}>
                          <div className={style.title}>{img.sub}</div>

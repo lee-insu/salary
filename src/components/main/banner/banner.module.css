@@ -35,6 +35,16 @@
     border-radius: 16px;    
 }
 
+.img {
+    position: relative;
+    width: 720px;
+    height: 500px;
+    background: #F9F9F9;
+    border: 0px solid #C8C8C8;
+    box-sizing: border-box;
+    border-radius: 16px;    
+}
+
 .category {
     position: relative;
     height: 27px;
@@ -104,7 +114,10 @@
 
 .view {
     font-size: 0.9rem;
-    margin-right: 10px;
+    margin-right: 5px;
+
+    font-family: noto sans;
+    color: rgba(0, 0, 0, 0.6);
 }
 
 .comment {
@@ -114,6 +127,7 @@
 .icon_view {
     width: 15px;
     margin-right: 4px;
+    padding-top: 5px;
 }
 .icon_comment {
     width: 15px;
@@ -136,4 +150,5 @@
     line-height: 21px;
     font-size: 14px;
 }
+
 
