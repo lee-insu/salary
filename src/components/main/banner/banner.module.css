@@ -89,11 +89,19 @@
     font-family: noto sans;
     font-size: 14px;
     font-weight: 400;
-    display: flex;
+    display: -webkit-box;
     line-height: 21px;
     text-align: center;
-    align-items: center;
+    align-items: left;
     color: #323232;
+
+    word-break: break-all;
+    white-space: normal;
+    overflow:hidden;
+    text-overflow: ellipsis;
+   
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
 }
 
 .container_user {

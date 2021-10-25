@@ -18,11 +18,11 @@ function App() {
         <Header/>
           <Switch>
             <Route exact path ='/' component={Main}/>
-            <Route exact path ='/onboard/:id' component={Onboard}/>
+            <Route exact path ='/onboard/:author/:id' component={Onboard}/>
             <Route exact path ='/research' component={Research}/> 
-            <Route exact path ='/research/:id' component={ResearchContent}/>
+            <Route exact path ='/research/:date/:id' component={ResearchContent}/>
             <Route exact path = '/login' component={Login}/>
-            <Route exact path = '/search' component={Search}/>
+            <Route exact path = '/search/:id' component={Search}/>
           </Switch>
           </div>
           <Footer/>

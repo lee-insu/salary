@@ -8,8 +8,11 @@
 .header {
     width: 1440px;
     height: 382px;
-    background-color: cadetblue;
     margin: 0 auto;
+}
+
+.img {
+    opacity: 0.5;
 }
 
 .category {
@@ -53,7 +56,7 @@
 
 .keyword_li {
     border: 0px solid;
-    background-color: #3065EC;
+    background-color: #0048ff;
     border-radius: 37px;
     padding: 8px 17px;
     font-family: noto sans;
@@ -87,8 +90,16 @@
 }
 
 .article_container {
-    margin-top: 100px;
-    height: 80vh;
+   
+    width: 820px;
+    margin: 100px auto;
+    height: auto;
+
+}
+
+.article {
+    font-family: noto sans;
+    text-align: left;
 }
 
 .more {

@@ -129,6 +129,16 @@
     background-color: #e4e4e4;
 }
 
+.imgs {
+    width: 223px;
+    height: 482px;
+    margin: 0;
+    border-radius: 16px;
+    border: 0px solid;
+    background-color: #e4e4e4;
+    box-shadow: rgba(104, 104, 104, 0.1) 0px 4px 12px;
+}
+
 .article_box {
     margin-top: 20px;
     display: flex;
@@ -191,11 +201,19 @@
     font-family: noto sans;
     font-size: 14px;
     font-weight: 400;
-    display: flex;
+    display: -webkit-box;
     line-height: 21px;
     text-align: center;
     align-items: center;
     color: #323232;
+
+    word-break: break-all;
+    white-space: normal;
+    overflow:hidden;
+    text-overflow: ellipsis;
+
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
 
 }
 

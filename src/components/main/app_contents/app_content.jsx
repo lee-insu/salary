@@ -6,7 +6,7 @@ import { connect } from 'react-redux';
 import {getKeyword} from '../../../service/store';
 
 
-const AppContent = ({getKeyword}) => {
+const AppContent = () => {
 
     const fireStore = firestore.collection('appKeyword');
 
@@ -41,7 +41,7 @@ const AppContent = ({getKeyword}) => {
             for(let i = 0; i < array.length; i++) {
                 const arr = array[i].id;
                 getAppKeywords(prevState => [...prevState,arr]);
-                getKeyword(arr);
+
             }
         })
     },[])
@@ -104,28 +104,27 @@ const AppContent = ({getKeyword}) => {
           if(id === `${img.app_name}${img.app_ver}`) {
               return img.imgs.map(img => 
               <li className={style.img}>
-                  <img className={style.img} src={img} alt=""/>
+                  <img className={style.imgs} src={img} alt=""/>
               </li>)
           }
        })
     }
    
     const allContent = allContentsArr.map(content => 
-        <Link to = {`/onboard/${content.id}`}>
+        <Link to = {`/onboard/${content.title_app_keyword}/${content.id}`}>
             <div 
             key={content.id}
             className={style.container}>
                 <div className={style.content_box}>
                     <div className={style.name_box}>
                         <div className={style.title}>{content.app_name}</div>
-                        <div className={style.update}>업데이트 버전: {content.app_ver}v</div>
+                        <div className={style.update}>업데이트 버전: {content.app_ver} v</div>
                     </div>
                     <ul className={style.img_box}>
                         {imgsView(content.id)}
                         
                     </ul>
                 </div>
-                
             </div>
         </Link>
         )
@@ -134,7 +133,7 @@ const AppContent = ({getKeyword}) => {
         let content;
         if(contents) {
             const cont = contents.map(content =>
-                <Link to = {`/onboard/${content.id}`}>
+                <Link to = {`/onboard/${content.title_app_keyword}/${content.id}`}>
                      <div 
                       key={content.id}
                       className={style.container}>
@@ -195,11 +194,7 @@ const AppContent = ({getKeyword}) => {
 };
 
 
-const mapDispatchToProps = (dispatch) => {
-    return {
-        getKeyword:(key) => dispatch(getKeyword(key))
-    }
-};
 
 
-export default connect(null,mapDispatchToProps)(AppContent);
+
+export default AppContent;

@@ -113,10 +113,14 @@
 .title {
     font-family: noto sans;
     font-weight: 700;
+    width: 370px;
     font-size: 18px;
     color: #323232;
     text-align: left;
     margin-top: 20px;
+    word-break:break-all;
+   
+
 }
 
 .article_info {
