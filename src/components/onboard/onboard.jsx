@@ -80,7 +80,7 @@ const Onboard = () => {
     </div>
         )
 
-    console.log(research.length);
+
 
     const researchViews = research.flat().map(research => 
         <li className={style.article_li}>  
@@ -99,6 +99,7 @@ const Onboard = () => {
 
     )
 
+
     return (
         <div className={style.session}>
             <div className={style.explain_box}>
@@ -109,8 +110,6 @@ const Onboard = () => {
 
             {imgArray}
     
-           
-         
             <div className={style.container}>
                 <div className={style.content_box}>
                     <div className={style.name_box}>
@@ -121,8 +120,6 @@ const Onboard = () => {
                 {researchViews}
                 </ul>
             </div>
-
-
 
         </div>
     );

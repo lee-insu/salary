@@ -31,17 +31,17 @@ const AppContent = () => {
                             ...doc.data()
                         }))
                         getContents(prevState => [...prevState,array])
-                        // array.map(arr => 
-                        //     firestore.collection('imgs').doc(keyword.id).collection('img')
-                        //     .doc(arr.id).collection('list').where('order','==','1')
-                        //     .onSnapshot(snapshot => {
-                        //         const array = snapshot.docs.map(doc => ({
-                        //             id:doc.id,
-                        //             ...doc.data()
-                        //         }))
-                        //         getImgs(prevState => [...prevState,array]);
-                        //     })
-                        //     )
+                        array.map(arr => 
+                            firestore.collection('imgs').doc(keyword.id).collection('img')
+                            .doc(arr.id).collection('list').where('order','==','1')
+                            .onSnapshot(snapshot => {
+                                const array = snapshot.docs.map(doc => ({
+                                    id:doc.id,
+                                    ...doc.data()
+                                }))
+                                getImgs(prevState => [...prevState,array]);
+                            })
+                            )
                     })
                 })
             }
@@ -75,7 +75,7 @@ const AppContent = () => {
                         <div className={style.update}>업데이트 버전: {content.app_ver} v</div>
                     </div>
                     <ul className={style.img_box}>
-                        {/* {imgsView(content.id)} */}
+                        {imgsView(content.id)}
                         
                     </ul>
                 </div>
