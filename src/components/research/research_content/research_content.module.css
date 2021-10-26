@@ -101,6 +101,17 @@
     font-family: noto sans;
     text-align: left;
 }
+/* Content image size */
+.article > p > img {
+    width: 800px;
+    height: auto;
+}
+
+figure > img {
+    width: 800px;
+    height: auto;
+}
+/*  */
 
 .more {
     width: 100%;

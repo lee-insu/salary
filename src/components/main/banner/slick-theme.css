@@ -1,12 +1,12 @@
 @charset 'UTF-8';
 /* Slider */
-/* .slick-loading .slick-list
+.slick-loading .slick-list
 {
     background: #fff url('./ajax-loader.gif') center center no-repeat;
-} */
+}
 
 /* Icons */
-/* @font-face
+@font-face
 {
     font-family: 'slick';
     font-weight: normal;
@@ -14,7 +14,7 @@
 
     src: url('./fonts/slick.eot');
     src: url('./fonts/slick.eot?#iefix') format('embedded-opentype'), url('./fonts/slick.woff') format('woff'), url('./fonts/slick.ttf') format('truetype'), url('./fonts/slick.svg#slick') format('svg');
-} */
+}
 /* Arrows */
 .slick-prev,
 .slick-next
@@ -23,7 +23,7 @@
     line-height: 0;
 
     position: absolute;
-    top: 50%;
+    top: 53%;
 
     display: block;
 
@@ -55,7 +55,7 @@
 .slick-next:hover:before,
 .slick-next:focus:before
 {
-    opacity: 1;
+    opacity: .75;
 }
 .slick-prev.slick-disabled:before,
 .slick-next.slick-disabled:before
@@ -67,11 +67,11 @@
 .slick-next:before
 {
     font-family: 'slick';
-    font-size: 20px;
+    font-size: 74px;
     line-height: 1;
 
-    opacity: .75;
-    color: white;
+    opacity: .15;
+    color: rgb(34, 34, 34);
 
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -79,7 +79,8 @@
 
 .slick-prev
 {
-    left: -25px;
+    left: 45%;
+    z-index: 3;
 }
 [dir='rtl'] .slick-prev
 {
@@ -97,7 +98,7 @@
 
 .slick-next
 {
-    right: -25px;
+    right: 13%;
 }
 [dir='rtl'] .slick-next
 {
@@ -122,10 +123,9 @@
 .slick-dots
 {
     position: absolute;
-    bottom: -25px;
-
+    left:17%;
+    bottom: 20px;
     display: block;
-
     width: 100%;
     padding: 0;
     margin: 0;
@@ -142,7 +142,7 @@
 
     width: 20px;
     height: 20px;
-    margin: 0 5px;
+    margin: 0 2px;
     padding: 0;
 
     cursor: pointer;
@@ -154,8 +154,8 @@
 
     display: block;
 
-    width: 20px;
-    height: 20px;
+    width: 25px;
+    height: 25px;
     padding: 5px;
 
     cursor: pointer;
@@ -185,20 +185,20 @@
     top: 0;
     left: 0;
 
-    width: 20px;
-    height: 20px;
+    width: 25px;
+    height: 25px;
 
     content: '•';
     text-align: center;
 
-    opacity: .25;
-    color: black;
+    opacity: .65;
+    color: #fff;
 
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
 .slick-dots li.slick-active button:before
 {
-    opacity: .75;
-    color: black;
+    opacity: .9;
+    color: #3065EC;
 }

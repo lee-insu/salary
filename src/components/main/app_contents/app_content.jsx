@@ -1,118 +1,71 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { firestore } from '../../../service/firebase';
 import style from './app_content.module.css';
-import {firestore} from '../../../service/firebase';
-
 
 const AppContent = () => {
 
     const fireStore = firestore.collection('appKeyword');
 
-    const [activeBtn,setActiveBtn] = useState("");
-    const [appKeywords,getAppKeywords] = useState([]);
-    const [contents,getContents] = useState([]);
-    const [allContents,getAllContents] = useState([]);
-    const [allImgs,getAllImgs] = useState([]);
-    const [allContentsArr,getAllContentsArr] =useState([]);
-    const [allImgsArr,getAllImgsArr] = useState([]);
-    const [lastDoc,setLastDoc] = useState();
-    const [loading,setLoading] = useState(false);
-    const [isEmpty,setIsEmpty] = useState(false);
-  
+    const [active,setActive] = useState(null);
+    const [keywords,getKeywords] = useState([]);
+    const [contents,getContents] = useState([])
+    const [imgs,getImgs] = useState([]);
+    const [count,setCount] = useState(3);
     
 
-    const handleKeyword = e => {
-        setActiveBtn(e)
-        fireStore.doc(e).collection('appContents').limit(3).where('active','==',false)
-        .onSnapshot(snapshot => {
-            const array = snapshot.docs.map(doc => ({
-                id:doc.id,
-                ...doc.data()
-            }))
-            getContents(array);
-        })
-    };
-    
-  
+
+
     useEffect(()=> {
         fireStore.where('active','==',true).onSnapshot(snapshot => {
             const array = snapshot.docs.map(doc => ({
                 id:doc.id
             }))
-            for(let i = 0; i < array.length; i++) {
-                const arr = array[i].id;
-                getAppKeywords(prevState => [...prevState,arr]);
-
-            }
-        })
-    },[])
-
-    useEffect(()=> {
-        if(!activeBtn) {
-            appKeywords.forEach(keyword => {
-                fireStore.doc(keyword).collection('appContents').where('active','==',false).limit(3)
-                .onSnapshot(snapshot => {
-                    const array = snapshot.docs.map(doc => ({
-                        id:doc.id,
-                        ...doc.data()
-                    }))
-                    getAllContents(prevState => [...prevState,array]);
-                })
-            })
-        }
-        
-    },[appKeywords])
-
-    useEffect(()=> {
-        const contentsFlat = allContents.flat();
-        const allContentsArray = [...new Set(contentsFlat.map(JSON.stringify))].map(JSON.parse);
-        getAllContentsArr(allContentsArray);
-    },[allContents])
-
-
-    useEffect(()=> {
-        if(!activeBtn && allContentsArr){
-            try{
-            allContentsArr.map(content => {
-                const id = content.id; 
-                appKeywords.forEach(keyword => {
-                    firestore.collection('imgs').doc(keyword).collection('img')
-                    .doc(id).collection('list').where('order','==','1')
+            getKeywords(array);
+            if(active === null) {
+                array.map(keyword => {
+                    fireStore.doc(keyword.id).collection('appContents').where('active','==',false)
                     .onSnapshot(snapshot => {
                         const array = snapshot.docs.map(doc => ({
                             id:doc.id,
                             ...doc.data()
                         }))
-                        getAllImgs(prevState => [...prevState,array])
+                        getContents(prevState => [...prevState,array])
+                        // array.map(arr => 
+                        //     firestore.collection('imgs').doc(keyword.id).collection('img')
+                        //     .doc(arr.id).collection('list').where('order','==','1')
+                        //     .onSnapshot(snapshot => {
+                        //         const array = snapshot.docs.map(doc => ({
+                        //             id:doc.id,
+                        //             ...doc.data()
+                        //         }))
+                        //         getImgs(prevState => [...prevState,array]);
+                        //     })
+                        //     )
                     })
                 })
-            })
-           }catch(err) {
-            console.log(err)
-          }
-        }
-      
-    },[allContentsArr,appKeywords])
+            }
+        })
+    },[active])
 
-    useEffect(()=> {
-        const all = allImgs.flat();
-        const allimgs = [...new Set(all.map(JSON.stringify))].map(JSON.parse);
-        getAllImgsArr(allimgs);
-    },[allImgs])
 
     const imgsView = id => {
-       return allImgsArr.map(img=> {
-          if(id === `${img.app_name}${img.app_ver}`) {
-              return img.imgs.map(img => 
-              <li className={style.img}>
-                  <img className={style.imgs} src={img} alt=""/>
-              </li>)
-          }
-       })
+        return imgs.flat().map(img => {
+            if(id === `${img.app_name}${img.app_ver}`) {
+                return img.imgs.map(img => 
+                    <li className={style.img}>
+                    <img className={style.imgs} src={img} alt=""/>
+                    </li>
+                )
+            }
+        })
     }
-   
-    const allContent = allContentsArr.map(content => 
-        <Link to = {`/onboard/${content.title_app_keyword}/${content.id}`}>
+
+
+
+
+    const content = contents.flat().map(content => 
+            <Link to = {`/onboard/${content.title_app_keyword}/${content.id}`}>
             <div 
             key={content.id}
             className={style.container}>
@@ -122,7 +75,7 @@ const AppContent = () => {
                         <div className={style.update}>업데이트 버전: {content.app_ver} v</div>
                     </div>
                     <ul className={style.img_box}>
-                        {imgsView(content.id)}
+                        {/* {imgsView(content.id)} */}
                         
                     </ul>
                 </div>
@@ -131,41 +84,28 @@ const AppContent = () => {
         )
 
 
-        let content;
-        if(contents) {
-            const cont = contents.map(content =>
-                <Link to = {`/onboard/${content.title_app_keyword}/${content.id}`}>
-                     <div 
-                      key={content.id}
-                      className={style.container}>
-                         <div className={style.content_box}>
-                               <div className={style.name_box}>
-                                   <div className={style.title}>{content.app_name}</div>
-                                   <div className={style.update}>업데이트 버전: {content.app_ver}v</div>
-                               </div>
-                           <ul className={style.img_box}>
-                                 {imgsView(content.id)}
-                           </ul>
-                     </div>
-                    </div>
-                </Link>    
-                )
-              content = cont
-        }
-       
+    const handleKeyword = e => {
+        setActive(e);
+        fireStore.doc(e).collection('appContents').limit(3).where('active','==',false)
+        .onSnapshot(snapshot => {
+            const array = snapshot.docs.map(doc => ({
+                id:doc.id,
+                ...doc.data()
+            }))
+            getContents(array)
+        })
+    }
 
-
-
-    const keyword = appKeywords.map(keyword => 
+    const keyword = keywords.map(keyword => 
         <li
-        key={keyword}
-        onClick= {()=>handleKeyword(keyword)}
-        className={activeBtn === keyword ? style.li_active : style.li_unActive}
+        key={keyword.id}
+        onClick= {()=>handleKeyword(keyword.id)}
+        className={active === keyword.id ? style.li_active : style.li_unActive}
         >
-        {keyword}
+        {keyword.id}
         </li>
         )
-
+    
 
     return (
         <div className={style.session}>
@@ -175,8 +115,8 @@ const AppContent = () => {
                      <div className={style.sub_title}>간편 키워드 검색을 통해서 앱을 빠르게 찾아보세요!</div>
                      <ul className={style.ul}>
                             <li 
-                            className={!activeBtn? style.li_active : style.li_unActive}
-                            onClick={()=>setActiveBtn("")}
+                            className={!active? style.li_active : style.li_unActive}
+                            onClick={()=>setActive(null)}
                             >
                             전체
                             </li>
@@ -184,18 +124,17 @@ const AppContent = () => {
                      </ul>
                  </nav>
             </div>
+           
+           {contents ? content.slice(0,count) : null}
 
-
-
-            {!activeBtn ? allContent : content}
-  
-            <div className={style.more}>더보기</div>
+            {content.length > count? 
+            <div onClick={()=>{setCount(count + 3)}} className={style.more}>더보기</div>
+            :
+            <div className = {style.no}>{content.length > 3 ? '불러올 컨텐츠가 없습니다.' : null}</div>
+            }
+            
         </div>
     );
 };
-
-
-
-
 
 export default AppContent;

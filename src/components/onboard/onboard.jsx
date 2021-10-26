@@ -57,24 +57,6 @@ const Onboard = () => {
     },[content])
 
 
-    // useEffect(()=> {
-    //     if(content) {
-    //      const research = content.research_keyword;
-    //      research.map(research => {
-    //          firestore.collection('researchKeyword').where('keywords','array-contains',research)
-    //          .onSnapshot(snapshot => {
-    //          const array = snapshot.docs.map(doc => ({
-    //              id:doc.id,
-    //              ...doc.data()
-    //          }))
-    //          getResearch(array);
-    //      })
-    //      })
-    //     }
-    //  },[content])
-
-  
-
 
     const imgView = e => {
         return e.map(img => 
@@ -85,7 +67,7 @@ const Onboard = () => {
     }
 
 
-    const imgArray = imgs.map(img => 
+    const imgArray = imgs.slice(1,).map(img => 
         <div key={img.id} className={style.container}>  
             <div className={style.content_box}>
               <div className={style.name_box}>
@@ -98,12 +80,13 @@ const Onboard = () => {
     </div>
         )
 
+    console.log(research.length);
+
     const researchViews = research.flat().map(research => 
         <li className={style.article_li}>  
             <div className={style.article_box}>
                   <div className={style.art_category}>집중탐구 세상에 UX</div>
                   <div className={style.art_title}>{research.title}</div>
-                  {/* <div className={style.article} dangerouslySetInnerHTML={{ __html: research.text }}></div> */}
                   <div className={style.article}>{research.subTitle}</div>
                 <div className={style.contain_user}>
                 <ul className={style.ul}>

@@ -1,17 +1,14 @@
-import React, { useEffect, useMemo, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { firestore } from '../../service/firebase';
-import { getKeyword } from '../../service/store';
 import style from './research.module.css';
-import ResearchContent from './research_content/research_content';
 
 const Research = () => {
 
     const fireStore = firestore.collection('researchDate')
-    const [contents,getContents] = useState([]);
     const [date,getDate] = useState([]);
     const [keywords,getKeywords] = useState([]);
-    const [allkeywords,getAllkeywords] = useState([]);
+ 
 
 
     useEffect(()=> {
@@ -33,11 +30,22 @@ const Research = () => {
                     id:doc.id,
                     ...doc.data()
                 }))
-                getAllkeywords(prevState => [...prevState,array])
+                array.map(keyword => {
+                    const keywords = keyword.keywords;
+                    getKeywords(prevState => [...prevState,keywords])
+                });
             
             })
         })
     },[date])
+
+    const keywordArr = new Set(keywords.flat());
+    const newKeyword = [...keywordArr];
+  
+
+    const keyword = newKeyword.map(keyword => 
+        <li key={keyword.id} className={style.li_unActive}>{keyword}</li>
+        )
 
 
     const dateArticle = date.map(date => 
@@ -48,16 +56,14 @@ const Research = () => {
                 <div className={style.sub_explain}>간편 키워드 검색을 통해서 앱을 빠르게 찾아보세요!</div>
             </div>
             <ul className={style.ul}>
-                 <BoardLi date={date}/>
+                {keyword}
             </ul>
         </div>
         <ul className={style.article_box}>
             <ResearchContents date = {date}/>
         </ul>
     </div>   
-        )
-
-
+    )
 
     return (
         <div className={style.session}>
@@ -77,37 +83,6 @@ const Research = () => {
 
 export default Research;
 
-
-const BoardLi = ({date}) => {
-
-    const fireStore = firestore.collection('researchDate');
-    const [keywords,getKeywords] = useState();
-
-    useEffect(()=> {
-        fireStore.doc(date).collection('research').onSnapshot(snapshot => {
-            const array = snapshot.docs.map(doc => ({
-                id:doc.id,
-                ...doc.data()
-            }))
-            getKeywords(array)
-        })
-       
-    },[])
-
-    let keyword;
-    if(keywords) {
-       const kk= keywords.map(c=> {
-           return c.keywords.map(c=> 
-                  <li key={c.id} className={style.li_unActive}>{c}</li>
-                )
-        })
-        return keyword = kk;
-    }
-
-    return (
-        <div>{keyword}</div>
-    )
-};
 
 const ResearchContents = ({date}) => {
 
@@ -129,7 +104,9 @@ const ResearchContents = ({date}) => {
    const content = contents.map(content => 
             <Link to ={`/research/${content.year}년 ${content.month}월/${content.id}`}>
             <li className={style.article}>
-               <img className={style.img} src={content.img}></img>
+                <div className={style.img_box}>
+                 <img className={style.img} src={content.img}/>
+                </div>
                <div className={style.title}>{content.title}</div>
                <div className={style.article_info}>
                     <div className={style.view}><img className={style.icon_view} src="/static/img/view.png" alt="view"/>{content.views}</div>

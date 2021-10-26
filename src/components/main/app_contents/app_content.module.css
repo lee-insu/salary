@@ -131,3 +131,12 @@
     padding: 1rem 0rem;
 }
 
+.no {
+    font-family: noto sans;
+    font-weight: 400;
+    font-size: 12px;
+    color: #5c5c5c;
+    margin-top: 3rem;
+    text-align: center;
+}
+

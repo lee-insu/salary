@@ -28,7 +28,7 @@
     width: 720px;
     height: 500px;
     margin-left: 32px;
-
+    overflow: hidden;
     background: #F9F9F9;
     border: 0px solid #C8C8C8;
     box-sizing: border-box;
@@ -37,7 +37,7 @@
 
 .img {
     position: relative;
-    width: 720px;
+    left: -10%;
     height: 500px;
     background: #F9F9F9;
     border: 0px solid #C8C8C8;
