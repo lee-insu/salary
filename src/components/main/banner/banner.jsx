@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 import { firestore } from '../../../service/firebase';
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css"; 
-import "slick-carousel/slick/slick-theme.css";
+import "./slick-theme.css";
 
 const Banner = () => {
 
