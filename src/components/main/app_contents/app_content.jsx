@@ -2,8 +2,6 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import style from './app_content.module.css';
 import {firestore} from '../../../service/firebase';
-import { connect } from 'react-redux';
-import {getKeyword} from '../../../service/store';
 
 
 const AppContent = () => {
@@ -17,12 +15,15 @@ const AppContent = () => {
     const [allImgs,getAllImgs] = useState([]);
     const [allContentsArr,getAllContentsArr] =useState([]);
     const [allImgsArr,getAllImgsArr] = useState([]);
+    const [lastDoc,setLastDoc] = useState();
+    const [loading,setLoading] = useState(false);
+    const [isEmpty,setIsEmpty] = useState(false);
   
     
 
     const handleKeyword = e => {
         setActiveBtn(e)
-        fireStore.doc(e).collection('appContents').where('active','==',false)
+        fireStore.doc(e).collection('appContents').limit(3).where('active','==',false)
         .onSnapshot(snapshot => {
             const array = snapshot.docs.map(doc => ({
                 id:doc.id,
@@ -49,7 +50,7 @@ const AppContent = () => {
     useEffect(()=> {
         if(!activeBtn) {
             appKeywords.forEach(keyword => {
-                fireStore.doc(keyword).collection('appContents').where('active','==',false)
+                fireStore.doc(keyword).collection('appContents').where('active','==',false).limit(3)
                 .onSnapshot(snapshot => {
                     const array = snapshot.docs.map(doc => ({
                         id:doc.id,

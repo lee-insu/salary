@@ -1,5 +1,6 @@
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import './App.css';
+import ContentsList from './components/contentsList/contentsList';
 import Footer from './components/footer/footer';
 import Header from './components/header/header';
 import Login from './components/login/login';
@@ -23,6 +24,7 @@ function App() {
             <Route exact path ='/research/:date/:id' component={ResearchContent}/>
             <Route exact path = '/login' component={Login}/>
             <Route exact path = '/search/:id' component={Search}/>
+            <Route exact path = '/appcontents/:id' component={ContentsList}/>
           </Switch>
           </div>
           <Footer/>
