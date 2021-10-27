@@ -59,16 +59,16 @@ const Onboard = () => {
 
 
     const imgView = e => {
-        return e.map(img => 
-            <li key={img.id} className={style.img}>
+        return e.map((img,i) => 
+            <li key={i} className={style.img}>
                 <img className={style.imgs} src={img} alt={img.name}/>
             </li>
             )
     }
 
 
-    const imgArray = imgs.slice(1,).map(img => 
-        <div key={img.id} className={style.container}>  
+    const imgArray = imgs.slice(1,).map((img,i) => 
+        <div key={i} className={style.container}>  
             <div className={style.content_box}>
               <div className={style.name_box}>
                      <div className={style.title}>{img.sub}</div>
@@ -82,8 +82,8 @@ const Onboard = () => {
 
 
 
-    const researchViews = research.flat().map(research => 
-        <li className={style.article_li}>  
+    const researchViews = research.flat().map((research,i) => 
+        <li key={i} className={style.article_li}>  
             <div className={style.article_box}>
                   <div className={style.art_category}>집중탐구 세상에 UX</div>
                   <div className={style.art_title}>{research.title}</div>

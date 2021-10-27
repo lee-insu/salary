@@ -36,8 +36,8 @@ const ContentsList = () => {
     const imgsView = id => {
         return imgs.flat().map(img => {
             if(id === `${img.app_name}${img.app_ver}`) {
-                return img.imgs.map(img => 
-                <li className={style.img}>
+                return img.imgs.map((img,i) => 
+                <li key={i} className={style.img}>
                     <img className={style.imgs} src={img} alt=""/>
                 </li>)
             }
@@ -46,10 +46,10 @@ const ContentsList = () => {
 
 
 
-    const content = contents.map(content => 
+    const content = contents.map((content,i) => 
          <Link to = {`/onboard/${content.title_app_keyword}/${content.id}`}>
             <div 
-            key={content.id}
+            key={i}
             className={style.container}>
                 <div className={style.content_box}>
                     <div className={style.name_box}>

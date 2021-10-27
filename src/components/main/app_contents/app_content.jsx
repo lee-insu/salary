@@ -52,8 +52,8 @@ const AppContent = () => {
     const imgsView = id => {
         return imgs.flat().map(img => {
             if(id === `${img.app_name}${img.app_ver}`) {
-                return img.imgs.map(img => 
-                    <li className={style.img}>
+                return img.imgs.map((img,i) => 
+                    <li key={i} className={style.img}>
                     <img className={style.imgs} src={img} alt=""/>
                     </li>
                 )
@@ -64,10 +64,10 @@ const AppContent = () => {
 
 
 
-    const content = contents.flat().map(content => 
+    const content = contents.flat().map((content,i) => 
             <Link to = {`/onboard/${content.title_app_keyword}/${content.id}`}>
             <div 
-            key={content.id}
+            key={i}
             className={style.container}>
                 <div className={style.content_box}>
                     <div className={style.name_box}>
@@ -96,9 +96,9 @@ const AppContent = () => {
         })
     }
 
-    const keyword = keywords.map(keyword => 
+    const keyword = keywords.map((keyword,i) => 
         <li
-        key={keyword.id}
+        key={i}
         onClick= {()=>handleKeyword(keyword.id)}
         className={active === keyword.id ? style.li_active : style.li_unActive}
         >

@@ -75,8 +75,8 @@ const Search = () => {
     const imgsView = id => {
         return imgs.flat().map(img => {
             if(id === `${img.app_name}${img.app_ver}`) {
-                return img.imgs.map(img => 
-                <li className={style.img}>
+                return img.imgs.map((img,i) => 
+                <li key={i} className={style.img}>
                     <img className={style.imgs} src={img} alt=""/>
                 </li>)
             }
@@ -84,10 +84,10 @@ const Search = () => {
     }
 
 
-    const content = contents.flat().map(content => 
+    const content = contents.flat().map((content,i) => 
                  <Link to = {`/onboard/${content.title_app_keyword}/${content.id}`}>
             <div 
-            key={content.id}
+            key={i}
             className={style.container}>
                 <div className={style.content_box}>
                     <div className={style.name_box}>
@@ -104,8 +104,8 @@ const Search = () => {
         )
 
 
-    const research = researches.flat().map(research => 
-        <li key={research.id} className={style.article_li}>  
+    const research = researches.flat().map((research,i) => 
+        <li key={i} className={style.article_li}>  
             <div className={style.article_container}>
                   <div className={style.art_category}>집중탐구 세상에 UX</div>
                   <div className={style.art_title}>{research.title}</div>

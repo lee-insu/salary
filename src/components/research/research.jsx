@@ -101,9 +101,9 @@ const ResearchContents = ({date}) => {
     },[])
 
 
-   const content = contents.map(content => 
+   const content = contents.map((content,i) => 
             <Link to ={`/research/${content.year}년 ${content.month}월/${content.id}`}>
-            <li className={style.article}>
+            <li key={i} className={style.article}>
                 <div className={style.img_box}>
                  <img className={style.img} src={content.img}/>
                 </div>

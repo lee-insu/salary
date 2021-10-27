@@ -47,8 +47,8 @@ const Banner = () => {
     const allContentsArray = [...new Set(contentsFlat.map(JSON.stringify))].map(JSON.parse);
     
 
-        const content = allContentsArray.map(content => 
-            <div key={content.id}>
+        const content = allContentsArray.map((content,i) => 
+            <div key={i}>
                 <div  className={style.container}>
                     <div className={style.content_box}>
                         <div className={style.category}>집중탐구 세상에 UX</div>

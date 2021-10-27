@@ -33,8 +33,8 @@ const ResearchContent = () => {
     },[])
 
 
-    const keyword = keywords.map(key => 
-         <li key={key.id} className={style.keyword_li}>{key}</li>
+    const keyword = keywords.map((key,i) => 
+         <li key={i} className={style.keyword_li}>{key}</li>
         )
    
     

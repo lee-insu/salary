@@ -42,9 +42,9 @@ const Header = ({search,searchStore}) => {
         })
     },[])
 
-    const keyword = keywords.map(keyword => 
+    const keyword = keywords.map((keyword,i) => 
         <Link to={`/appcontents/${keyword.id}`}>
-        <li key={keyword.id} onClick={dropDown} className={classnames(drop ? style.drop_menu_item : style.hidden)}>{keyword.id}</li>
+        <li key={i} onClick={dropDown} className={classnames(drop ? style.drop_menu_item : style.hidden)}>{keyword.id}</li>
         </Link>
         )
 
