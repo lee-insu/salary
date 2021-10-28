@@ -91,7 +91,7 @@ const ResearchContents = ({date}) => {
     const [contents,getContents] = useState([]);
 
     useEffect(()=> {
-        fireStore.doc(date).collection('research').onSnapshot(snapshot => {
+        fireStore.doc(date).collection('research').where('active','==',true).onSnapshot(snapshot => {
             const array = snapshot.docs.map(doc => ({
                 id:doc.id,
                 ...doc.data()

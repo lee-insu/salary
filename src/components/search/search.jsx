@@ -31,7 +31,7 @@ const Search = () => {
                 }))
                 array.forEach(keyword => {
                     firestore.collection('appKeyword').doc(keyword.id).collection('appContents')
-                    .where('app_name',">=",params).where("app_name","<=",params + "\uf8ff")
+                    .where('active','==',true).where('app_name',">=",params).where("app_name","<=",params + "\uf8ff")
                     .onSnapshot(snapshot => {
                         const array = snapshot.docs.map(doc => ({
                             id:doc.id,
@@ -60,7 +60,7 @@ const Search = () => {
                 }))
                 array.forEach(arr => {
                     firestore.collection('researchDate').doc(arr.id).collection('research')
-                    .where('title',">=",params).where("title","<=",params + "\uf8ff")
+                    .where('active','==',true).where('title',">=",params).where("title","<=",params + "\uf8ff")
                     .onSnapshot(snapshot => {
                         const array = snapshot.docs.map(doc => ({
                             id:doc.id,

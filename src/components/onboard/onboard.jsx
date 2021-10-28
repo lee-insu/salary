@@ -43,7 +43,7 @@ const Onboard = () => {
             array.forEach(date=> {
                research.map(research => {
                 firestore.collection('researchDate').doc(date.id).collection('research').where('keywords','array-contains',research)
-                .onSnapshot(snapshot => {
+                .where('active','==',true).onSnapshot(snapshot => {
                     const array = snapshot.docs.map(doc => ({
                         id:doc.id,
                         ...doc.data()

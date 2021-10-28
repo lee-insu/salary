@@ -31,7 +31,7 @@ const Banner = () => {
                 id:doc.id
             }))
             array.forEach(date => {
-                fireStore.doc(date.id).collection('research')
+                fireStore.doc(date.id).collection('research').where('active','==',true)
                 .onSnapshot(snapshot => {
                     const array = snapshot.docs.map(doc => ({
                         id:doc.id,

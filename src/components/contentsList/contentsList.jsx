@@ -12,7 +12,7 @@ const ContentsList = () => {
 
 
     useEffect(()=> {
-        fireStore.where('active','==',false).onSnapshot(snapshot => {
+        fireStore.where('active','==',true).onSnapshot(snapshot => {
             const array = snapshot.docs.map(doc => ({
                 id:doc.id,
                 ...doc.data()

@@ -24,7 +24,7 @@ const AppContent = () => {
             getKeywords(array);
             if(active === null) {
                 array.map(keyword => {
-                    fireStore.doc(keyword.id).collection('appContents').where('active','==',false)
+                    fireStore.doc(keyword.id).collection('appContents').where('active','==',true)
                     .onSnapshot(snapshot => {
                         const array = snapshot.docs.map(doc => ({
                             id:doc.id,
@@ -86,7 +86,7 @@ const AppContent = () => {
 
     const handleKeyword = e => {
         setActive(e);
-        fireStore.doc(e).collection('appContents').limit(3).where('active','==',false)
+        fireStore.doc(e).collection('appContents').limit(3)
         .onSnapshot(snapshot => {
             const array = snapshot.docs.map(doc => ({
                 id:doc.id,
