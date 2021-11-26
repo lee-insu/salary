@@ -50,7 +50,7 @@ const Header = ({search,searchStore}) => {
 
     return (
         <nav className={style.nav}>
-            <Link to='/'><div className={style.logo}>salary</div></Link>  
+            <Link to='/'><div className={style.logo}>heyapp</div></Link>  
             <ul className={style.ul}>
                 <li onClick={dropDown} className={classnames(style.li)}>
                     <div  className={style.list}>앱 화면</div>
