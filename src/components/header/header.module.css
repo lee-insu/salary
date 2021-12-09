@@ -196,3 +196,45 @@ color: #000000;
     color: #000000;
 }
 
+.user {
+    position: absolute;
+    width: auto;
+    height: 24px;
+    left: 1150px;
+    top: 15px;
+
+    font-family: noto sans;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+
+
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+    color: #000000;
+}
+
+.logout {
+    position: absolute;
+    width: auto;
+    height: 24px;
+    left: 1275px;
+    top: 15px;
+
+    font-family: noto sans;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+
+
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+    color: #000000;
+}
+

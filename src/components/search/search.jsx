@@ -53,7 +53,7 @@ const Search = () => {
                     })
                 })
             })
-            //
+            
             firestore.collection('researchDate').onSnapshot(snapshot => {
                 const array =snapshot.docs.map(doc => ({
                     id:doc.id

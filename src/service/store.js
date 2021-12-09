@@ -4,6 +4,7 @@ import {createStore} from 'redux';
 const contentId = 'contentid';
 const keyword = 'keyword';
 const search = 'search';
+const userActive ='user';
 
 export const getContentId = id => {
     return {
@@ -26,6 +27,13 @@ export const getSearch = key => {
     }
 }
 
+export const getUser = user => {
+    return {
+        type:userActive,
+        user
+    }
+}
+
 
 const reducer = (state = [], action) => {
     switch(action.type) {
@@ -34,7 +42,9 @@ const reducer = (state = [], action) => {
         case keyword : 
             return [...state,{keyword:action.key}];
         case search :
-            return {search:action.key}
+            return {search:action.key};
+        case userActive :
+            return {user:action.user}
         default :
             return state;
     }

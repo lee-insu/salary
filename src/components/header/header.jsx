@@ -7,9 +7,10 @@ import { connect } from 'react-redux';
 import {getSearch} from '../../service/store';
 import classnames from 'classnames';
 import { firestore } from '../../service/firebase';
+import {firebaseAuth} from '../../service/firebase';
 
 
-const Header = ({search,searchStore}) => {
+const Header = ({state,searchStore,login}) => {
 
     const history = useHistory();
     const [drop,setDrop] = useState(false);
@@ -22,7 +23,7 @@ const Header = ({search,searchStore}) => {
 
     const onSubmit = async(e) => {
         e.preventDefault();
-       history.push(`/search/${search.search}`);
+       history.push(`/search/${state.search}`);
     }
 
     const dropDown = () => {
@@ -32,6 +33,14 @@ const Header = ({search,searchStore}) => {
             setDrop(false);
         }
     }
+
+    const logout = () => {
+        firebaseAuth.signOut();
+        window.location.replace('/');
+    }
+
+  
+ 
 
     useState(()=> {
         firestore.collection('appKeyword').where('active','==',true).onSnapshot(snapshot => {
@@ -77,17 +86,26 @@ const Header = ({search,searchStore}) => {
 
                 />
             </form>
+            
             <ul>
+                {login ? 
+                <>
+                <li className={style.user}>{state.user.displayName}님</li>
+                <li className={classnames(style.logout,style.li)} onClick={logout}>로그아웃</li>
+                </>
+                :
                 <li className={style.li}>
                     <Link to='/login'><div className={style.login}>로그인</div></Link>
                 </li>
+
+                }
             </ul>
         </nav>
     );
 };
 
-const mapStateToProps = (state,prop) => {
-    return {search:state}
+const mapStateToProps = (state) => {
+    return {state:state}
 }
 
 
