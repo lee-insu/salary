@@ -1,240 +1,228 @@
 .nav {
-    position: relative;
-    width: 100%;
-    height: 55px;
-    border-bottom: 1px solid #F4F4F4;;
-    display: flex;
+  position: relative;
+  width: 100%;
+  height: 55px;
+  border-bottom: 1px solid #f4f4f4;
+  display: flex;
 }
-
 
 .logo {
-    position: relative;
-    width: 76px;
-    height: 33px;
-    left: 103px;
-    display: inline-block;
-    padding-top: 2px;
+  position: relative;
+  width: 76px;
+  height: 33px;
+  left: 103px;
+  display: inline-block;
+  padding-top: 2px;
 
-    font-family: roboto;
-    font-weight: 500;
-    font-size: 28px;
-    line-height: 44px;
-    text-align: center;
-    color: #3065EC;
+  font-family: roboto;
+  font-weight: 500;
+  font-size: 28px;
+  line-height: 44px;
+  text-align: center;
+  color: #3065ec;
 }
 
-
 .ul {
-    display: flex;
+  display: flex;
 }
 
 .li {
-    cursor: pointer;
+  cursor: pointer;
 }
 .hidden {
-    visibility: hidden;
+  visibility: hidden;
 }
 
 .drop_down {
-    position: absolute;
-    width: 180px;
-    height: auto;
-    top: 55px;
-    left: 264px;
-    z-index: 9;
-
+  position: absolute;
+  width: 180px;
+  height: auto;
+  top: 55px;
+  left: 264px;
+  z-index: 9;
 }
 
 .drop_menu_box {
-    width: 100%;
-    height: 100%;
-    background-color: #fff;
-    margin: 0;
-    list-style: none;
-    border: 1px solid #E1E1E1;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  margin: 0;
+  list-style: none;
+  border: 1px solid #e1e1e1;
 
-    box-shadow: 0px 3px 6px 0px rgba(209, 209, 209, 0.2);
-    transition: all 0.3s;
-    -webkit-transition: all 0.3s;
-    -moz-transition: all 0.3s;
-    -ms-transition: all 0.3s;
-    -o-transition: all 0.3s;
-    visibility: visible;
-    opacity: 1;
-    
-
+  box-shadow: 0px 3px 6px 0px rgba(209, 209, 209, 0.2);
+  transition: all 0.3s;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -ms-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  visibility: visible;
+  opacity: 1;
 }
 
 .drop_menu {
-    width: 100%;
-    height: auto;
-    background-color: #fff;
-    text-align: left;
+  width: 100%;
+  height: auto;
+  background-color: #fff;
+  text-align: left;
 }
 
 .drop_menu_item {
-    width: 91%;
-    height: auto;
-    font-family: noto sans;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 16px;
-    align-items: left;
-    color: #000000;
-    padding: 20px 0px;
-    padding-left: 16px;
-
+  width: 91%;
+  height: auto;
+  font-family: noto sans;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  align-items: left;
+  color: #000000;
+  padding: 20px 0px;
+  padding-left: 16px;
 }
 
-.drop_menu_item:hover{
-    background-color: #C8C8C8;
-
+.drop_menu_item:hover {
+  background-color: #c8c8c8;
 }
-
 
 .list {
-position: absolute;
-width: 48px;
-height: 24px;
-left: 264px;
-top: 14.95px;
+  position: absolute;
+  width: 50px;
+  height: 24px;
+  left: 264px;
+  top: 14.95px;
 
-font-family: noto sans;
-font-weight: 500;
-font-size: 16px;
-line-height: 24px;
+  font-family: noto sans;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
 
-display: flex;
-align-items: center;
-text-align: center;
+  display: flex;
+  align-items: center;
+  text-align: center;
 
-color: #000000;
+  color: #000000;
 }
 
 .icon {
-    position: absolute;
-    width: 32px;
-    height: 27px;
-    left: 325px;
-    top: 14px;
-    border-radius: 5px;
+  position: absolute;
+  width: 32px;
+  height: 27px;
+  left: 325px;
+  top: 14px;
+  border-radius: 5px;
 }
 
 .list2 {
-    position: absolute;
-    width: 59px;
-    height: 24px;
-    left: 378px;
-    top: 14.95px;
+  position: absolute;
+  width: 61px;
+  height: 24px;
+  left: 378px;
+  top: 14.95px;
 
-    font-family: noto sans;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 24px;
+  font-family: noto sans;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
 
-    display: flex;
-    align-items: center;
-    text-align: center;
+  display: flex;
+  align-items: center;
+  text-align: center;
 
-    color: #000000;
+  color: #000000;
 }
 
 .icon2 {
-    position: absolute;
-    width: 32px;
-    height: 27px;
-    left: 448px;
-    top: 13px;
-    border-radius: 5px;
+  position: absolute;
+  width: 32px;
+  height: 27px;
+  left: 448px;
+  top: 13px;
+  border-radius: 5px;
 }
 
 .input {
-    position: absolute;
-    width: 284px;
-    height: 32px;
-    left: 578px;
-    top: 11px;
+  position: absolute;
+  width: 284px;
+  height: 32px;
+  left: 578px;
+  top: 11px;
 
-    background: #FFFFFF;
-    border: 1px solid #E4E4E4;
-    box-sizing: border-box;
-    padding-left: 1rem;
-    border-radius: 37px;
+  background: #ffffff;
+  border: 1px solid #e4e4e4;
+  box-sizing: border-box;
+  padding-left: 1rem;
+  border-radius: 37px;
 }
 
-.input::-webkit-input-placeholder{
-    background-image: url(https://cdn1.iconfinder.com/data/icons/hawcons/32/698627-icon-111-search-256.png) ;
-    background-size: contain;
-    background-position:  1px center;
-    background-repeat: no-repeat;
-    padding-top: 0.1rem;
-    padding-left: 1.3rem;
-    text-align: left;
-    letter-spacing: 0.5px;
-    text-indent: 0;
+.input::-webkit-input-placeholder {
+  background-image: url(https://cdn1.iconfinder.com/data/icons/hawcons/32/698627-icon-111-search-256.png);
+  background-size: contain;
+  background-position: 1px center;
+  background-repeat: no-repeat;
+  padding-top: 0.1rem;
+  padding-left: 1.3rem;
+  text-align: left;
+  letter-spacing: 0.5px;
+  text-indent: 0;
 }
 
 .login {
-    position: absolute;
-    width: 45px;
-    height: 24px;
-    left: 1295px;
-    top: 15px;
+  position: absolute;
+  width: 47px;
+  height: 24px;
+  left: 1295px;
+  top: 15px;
 
-    font-family: noto sans;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 24px;
+  font-family: noto sans;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
 
+  display: flex;
+  align-items: center;
+  text-align: center;
 
-    display: flex;
-    align-items: center;
-    text-align: center;
-
-    color: #000000;
+  color: #000000;
 }
 
 .user {
-    position: absolute;
-    width: auto;
-    height: 24px;
-    left: 1150px;
-    top: 15px;
+  position: absolute;
+  width: auto;
+  height: 24px;
+  left: 1150px;
+  top: 15px;
 
-    font-family: noto sans;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 24px;
+  font-family: noto sans;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
 
+  display: flex;
+  align-items: center;
+  text-align: center;
 
-    display: flex;
-    align-items: center;
-    text-align: center;
-
-    color: #000000;
+  color: #000000;
 }
 
 .logout {
-    position: absolute;
-    width: auto;
-    height: 24px;
-    left: 1275px;
-    top: 15px;
+  position: absolute;
+  width: auto;
+  height: 24px;
+  left: 1275px;
+  top: 15px;
 
-    font-family: noto sans;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 24px;
+  font-family: noto sans;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
 
+  display: flex;
+  align-items: center;
+  text-align: center;
 
-    display: flex;
-    align-items: center;
-    text-align: center;
-
-    color: #000000;
+  color: #000000;
 }
-

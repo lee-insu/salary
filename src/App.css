@@ -1,31 +1,123 @@
-a {all:unset;}
-a:link {text-decoration: none;}
-a:active {text-decoration: none;}
-a:visited {text-decoration: none;}
-a:hover{text-decoration: none; cursor: pointer;}
-ul {margin: 0; padding: 0;}
-li{list-style: none;}
-button:hover{cursor: pointer;}
+a {
+  all: unset;
+}
+a:link {
+  text-decoration: none;
+}
+a:active {
+  text-decoration: none;
+}
+a:visited {
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: none;
+  cursor: pointer;
+}
+ul {
+  margin: 0;
+  padding: 0;
+}
+li {
+  list-style: none;
+}
+button:hover {
+  cursor: pointer;
+}
 input {
-    appearance: none; 
-    -moz-appearance: none; 
-    -webkit-appearance: none; 
-    border-radius: 0;
-    -webkit-border-radius: 0;
-    -moz-border-radius: 0;
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  border-radius: 0;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
 }
 
-
 .app {
-    width: 100%;
-    text-align: center;
-    margin: 0 auto;
+  width: 100%;
+  text-align: center;
+  margin: 0 auto;
 }
 
 .session {
-    width: 1440px;
-    text-align: center;
-    margin: 0 auto;
-
+  width: 1440px;
+  text-align: center;
+  margin: 0 auto;
+}
+.responsive {
+  display: none;
+}
+.container {
+  width: 100%;
+  height: auto;
+  margin: 30% auto;
+  text-align: center;
+}
+.container > :nth-child(1) {
+  font-size: 4rem;
+  font-family: roboto;
+  font-weight: 500;
+  color: #3065ec;
+}
+.container > :nth-child(2) {
+  font-family: noto sans;
+  font-weight: 700;
+  font-size: 1.5rem;
+  margin-top: 3rem;
+}
+.container > :nth-child(3) {
+  font-family: noto sans;
+  font-weight: 500;
+  font-size: 1rem;
+  margin-top: 10px;
+  color: rgb(155, 155, 155);
 }
 
+@media screen and (min-width: 476px) and (max-width: 767px) {
+  .app {
+    display: none;
+  }
+  .responsive {
+    display: block;
+  }
+}
+
+@media screen and (min-width: 376px) and (max-width: 475px) {
+  .app {
+    display: none;
+  }
+  .responsive {
+    display: block;
+  }
+  .container {
+    margin: 40% auto;
+  }
+  .container > :nth-child(1) {
+    font-size: 3.5rem;
+  }
+  .container > :nth-child(2) {
+    font-size: 1.25rem;
+    margin-top: 1rem;
+  }
+}
+@media screen and (max-width: 375px) {
+  .app {
+    display: none;
+  }
+  .responsive {
+    display: block;
+  }
+  .container {
+    margin: 50% auto;
+  }
+  .container > :nth-child(1) {
+    font-size: 2.5rem;
+  }
+  .container > :nth-child(2) {
+    font-size: 1rem;
+    margin-top: 2rem;
+  }
+  .container > :nth-child(3) {
+    font-size: 0.8rem;
+  }
+}
