@@ -177,7 +177,7 @@ firebase를 사용하면서 이미지를 업로드 했다는 미리보기와 db�
 ## 5. 제작 과정
 
 제작 기간: 2개월 (63일)</br>
-스택, : React, JS, Firebase, Redux, PostCSS</br>
+스택,서비스 : React, JS, Firebase, Redux, PostCSS</br>
 라이브러리: CKeditor</br>
 협업툴: Figma
 
